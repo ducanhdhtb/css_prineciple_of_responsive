@@ -2,22 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>responsive-web-design-principles</title>
+	<title>Responsive Web Design Principles: Make an Image Responsive</title>
 </head>
 <body>
-	<style>
-  p {
-    font-size: 20px;
+ <!--  Making images responsive with CSS is actually very simple. Instead of applying an absolute width to an element:
+ 
+ img { width: 720px; }
+ 
+ You can use:
+ 
+ img {
+ max-width: 100%;
+ display: block;
+ height: auto;
+ }
+ The max-width property of 100% scales the image to fit the width of its container, but the image won't stretch wider than its original width. Setting the display property to block changes the image from an inline element (its default), to a block element on its own line. The height property of auto keeps the original aspect ratio of the image.
+ 
+ 
+ Add style rules for the img tag to make it responsive to the size of its container. It should display as a block-level element, it should fit the full width of its container without stretching, and it should keep its original aspect ratio. -->
+<style>
+  img{
+    max-width:100%;
+    display:block;
+    height:auto;
   }
-  
-  /* Add media query below */
-  @media (max-height: 800px) { 
-    /* CSS Rules */ 
-    font-size:10px;
-    }
-  
 </style>
-  
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 </body>
 </html>
