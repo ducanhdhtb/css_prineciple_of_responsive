@@ -2,33 +2,26 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Responsive Web Design Principles: Make an Image Responsive</title>
+	<title>Responsive Web Design Principles: Use a Retina Image for Higher Resolution Displays</title>
 </head>
 <body>
- <!--  Making images responsive with CSS is actually very simple. Instead of applying an absolute width to an element:
- 
- img { width: 720px; }
- 
- You can use:
- 
- img {
- max-width: 100%;
- display: block;
- height: auto;
- }
- The max-width property of 100% scales the image to fit the width of its container, but the image won't stretch wider than its original width. Setting the display property to block changes the image from an inline element (its default), to a block element on its own line. The height property of auto keeps the original aspect ratio of the image.
- 
- 
- Add style rules for the img tag to make it responsive to the size of its container. It should display as a block-level element, it should fit the full width of its container without stretching, and it should keep its original aspect ratio. -->
+<!-- The simplest way to make your images appear "retina" (and optimize them for retina displays) is to define their width and height values as only half of what the original file is.
+
+Here is an example of an image that is only using half of the original height and width:
+
+<style>
+  img { height: 250px; width: 250px; }
+</style>
+<img src="coolPic500x500" alt="A most excellent picture">
+
+Set the width and height of the img tag to half of their original values. In this case, both the original height and the original width are 200px. -->
 <style>
   img{
-     max-width:100%;
-    display:block;
-    height:auto; 
+      width:100px;
+      height:100px;
   }
 </style>
 
-<img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
-<img src="https://depdrama.com/wp-content/uploads/2015/04/25-anh-bikini-dep-Cho-Min-Yeong-1.jpg" alt="">
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
 </body>
 </html>
